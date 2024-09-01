@@ -1,85 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>About this site</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="preload" as="style" href="/assets/built/screen.css?v=7c04549a56">
-    <link rel="preload" as="script" href="/assets/built/source.js?v=7c04549a56">
-    
-    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-roman.woff2?v=7c04549a56" crossorigin="anonymous">
-<style>
-    @font-face {
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 100 900;
-        font-display: optional;
-        src: url(/assets/fonts/inter-roman.woff2?v=7c04549a56) format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-</style>
+    <title>Stuck in Low Range</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="/assets/built/screen.css?v=7c04549a56">
+    <link rel="preload" href="/assets/css/app.css?v=be7fda8393" as="style" />
+    <link rel="preload" href="/assets/js/manifest.js?v=be7fda8393" as="script" />
+    <link rel="preload" href="/assets/js/vendor.js?v=be7fda8393" as="script" />
+    <link rel="preload" href="/assets/js/app.js?v=be7fda8393" as="script" />
+
+      <link rel="preload" href="/assets/css/post.css?v=be7fda8393" as="style" />
+  <link rel="preload" href="/assets/js/page.js?v=be7fda8393" as="script" />
+
 
     <style>
-        :root {
-            --background-color: #ffffff
-        }
+      /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
+
+      /* source-sans-pro-regular */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('SourceSansPro-Regular'),
+            url("/assets/fonts/source-sans-pro/latin/source-sans-pro-regular.woff2?v=be7fda8393") format('woff2'),
+            url("/assets/fonts/source-sans-pro/latin/source-sans-pro-regular.woff?v=be7fda8393") format('woff');
+      }
+
+      /* source-sans-pro-600 */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: local('SourceSansPro-SemiBold'),
+            url("/assets/fonts/source-sans-pro/latin/source-sans-pro-600.woff2?v=be7fda8393") format('woff2'),
+            url("/assets/fonts/source-sans-pro/latin/source-sans-pro-600.woff?v=be7fda8393") format('woff');
+      }
+
+      /* source-sans-pro-700 */
+      @font-face {
+        font-family: 'Source Sans Pro';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: local('SourceSansPro-Bold'),
+            url("/assets/fonts/source-sans-pro/latin/source-sans-pro-700.woff2?v=be7fda8393") format('woff2'),
+            url("/assets/fonts/source-sans-pro/latin/source-sans-pro-700.woff?v=be7fda8393") format('woff');
+      }
+
+      /* iconmoon */
+      @font-face {
+        font-family: 'icomoon';
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+        src: url("/assets/fonts/icomoon/icomoon.eot?101fc3?v=be7fda8393");
+        src: url("/assets/fonts/icomoon/icomoon.eot?101fc3?v=be7fda8393#iefix") format('embedded-opentype'),
+        url("/assets/fonts/icomoon/icomoon.ttf?101fc3?v=be7fda8393") format('truetype'),
+        url("/assets/fonts/icomoon/icomoon.woff?101fc3?v=be7fda8393") format('woff'),
+        url("/assets/fonts/icomoon/icomoon.svg?101fc3?v=be7fda8393#icomoon") format('svg');
+      }
     </style>
 
-    <script>
-        /* The script for calculating the color contrast has been taken from
-        https://gomakethings.com/dynamically-changing-the-text-color-based-on-background-color-contrast-with-vanilla-js/ */
-        var accentColor = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
-        accentColor = accentColor.trim().slice(1);
+    <link rel="stylesheet" type="text/css" href="/assets/css/app.css?v=be7fda8393" media="screen" />
 
-        if (accentColor.length === 3) {
-            accentColor = accentColor[0] + accentColor[0] + accentColor[1] + accentColor[1] + accentColor[2] + accentColor[2];
-        }
+      <link rel="stylesheet" type="text/css" href="/assets/css/post.css?v=be7fda8393" media="screen" />
 
-        var r = parseInt(accentColor.substr(0, 2), 16);
-        var g = parseInt(accentColor.substr(2, 2), 16);
-        var b = parseInt(accentColor.substr(4, 2), 16);
-        var yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
-        var textColor = (yiq >= 128) ? 'dark' : 'light';
 
-        document.documentElement.className = `has-${textColor}-text`;
-    </script>
+    
 
+    <link rel="icon" href="https://stuckinlowrange.com/content/images/size/w256h256/2023/09/silr.jpeg" type="image/jpeg">
     <link rel="canonical" href="https://stuckinlowrange.com/about/">
     <meta name="referrer" content="no-referrer-when-downgrade">
     
-    <meta property="og:site_name" content="Ghost">
+    <meta property="og:site_name" content="Stuck in Low Range">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="About this site">
-    <meta property="og:description" content="This is an independent publication. If you subscribe today, you&#x27;ll get full access to the website as well as email newsletters about new content when it&#x27;s available. Your subscription makes this site possible. Thank you!
+    <meta property="og:title" content="Stuck in Low Range">
+    <meta property="og:description" content="G.K. Chesterton — The traveler sees what he sees. The tourist sees what he has come to see.
 
 
-Access all areas
+ * Mostly outdoors.
+ * Exploring.
+ * Camping
+ * Overlanding
+ * Park visits
+ * Hiking
+ * Etc,
 
-By signing up, you&#x27;ll get access to the full archive of everything">
+Launched in September 2023, this is a travel journal through our lens. Focused on slow immersive travels.
+
+Follow us on IG">
     <meta property="og:url" content="https://stuckinlowrange.com/about/">
-    <meta property="og:image" content="https://static.ghost.org/v5.0.0/images/publication-cover.jpg">
-    <meta property="article:published_time" content="2024-09-01T12:34:07.000Z">
-    <meta property="article:modified_time" content="2024-09-01T12:34:06.000Z">
+    <meta property="og:image" content="https://stuckinlowrange.com/content/images/2023/09/PXL_20230826_041504450-EDIT.jpg">
+    <meta property="article:published_time" content="2023-09-27T05:37:14.000Z">
+    <meta property="article:modified_time" content="2024-09-01T12:43:29.000Z">
+    
     <meta property="article:publisher" content="https://www.facebook.com/ghost">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About this site">
-    <meta name="twitter:description" content="This is an independent publication. If you subscribe today, you&#x27;ll get full access to the website as well as email newsletters about new content when it&#x27;s available. Your subscription makes this site possible. Thank you!
+    <meta name="twitter:title" content="Stuck in Low Range">
+    <meta name="twitter:description" content="G.K. Chesterton — The traveler sees what he sees. The tourist sees what he has come to see.
 
 
-Access all areas
+ * Mostly outdoors.
+ * Exploring.
+ * Camping
+ * Overlanding
+ * Park visits
+ * Hiking
+ * Etc,
 
-By signing up, you&#x27;ll get access to the full archive of everything">
+Launched in September 2023, this is a travel journal through our lens. Focused on slow immersive travels.
+
+Follow us on IG">
     <meta name="twitter:url" content="https://stuckinlowrange.com/about/">
-    <meta name="twitter:image" content="https://static.ghost.org/v5.0.0/images/publication-cover.jpg">
+    <meta name="twitter:image" content="https://stuckinlowrange.com/content/images/2023/09/PXL_20230826_041504450-EDIT.jpg">
     <meta name="twitter:label1" content="Written by">
-    <meta name="twitter:data1" content="Ghost">
+    <meta name="twitter:data1" content="Stuck in Low Range">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="">
     <meta name="twitter:site" content="@ghost">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="840">
+    <meta property="og:image:height" content="675">
     
     <script type="application/ld+json">
 {
@@ -87,33 +133,39 @@ By signing up, you&#x27;ll get access to the full archive of everything">
     "@type": "Article",
     "publisher": {
         "@type": "Organization",
-        "name": "Ghost",
+        "name": "Stuck in Low Range",
         "url": "https://stuckinlowrange.com/",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://stuckinlowrange.com/favicon.ico",
-            "width": 48,
-            "height": 48
+            "url": "https://stuckinlowrange.com/content/images/2023/09/silr.png",
+            "width": 60,
+            "height": 60
         }
     },
     "author": {
         "@type": "Person",
-        "name": "Ghost",
-        "url": "https://stuckinlowrange.com/author/ghost-user/",
+        "name": "Stuck in Low Range",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://stuckinlowrange.com/content/images/2024/09/silr.jpeg",
+            "width": 320,
+            "height": 320
+        },
+        "url": "https://stuckinlowrange.com/author/silr/",
         "sameAs": []
     },
-    "headline": "About this site",
+    "headline": "Stuck in Low Range",
     "url": "https://stuckinlowrange.com/about/",
-    "datePublished": "2024-09-01T12:34:07.000Z",
-    "dateModified": "2024-09-01T12:34:06.000Z",
-    "description": "This is an independent publication. If you subscribe today, you&#x27;ll get full access to the website as well as email newsletters about new content when it&#x27;s available. Your subscription makes this site possible. Thank you!\n\n\nAccess all areas\n\nBy signing up, you&#x27;ll get access to the full archive of everything that&#x27;s been published before and everything that&#x27;s still to come. Your very own private library.\n\n\nFresh content, delivered\n\nStay up to date with new content sent straight to your inbox! No mo",
+    "datePublished": "2023-09-27T05:37:14.000Z",
+    "dateModified": "2024-09-01T12:43:29.000Z",
+    "description": "G.K. Chesterton — The traveler sees what he sees. The tourist sees what he has come to see.\n\n\n * Mostly outdoors.\n * Exploring.\n * Camping\n * Overlanding\n * Park visits\n * Hiking\n * Etc,\n\nLaunched in September 2023, this is a travel journal through our lens. Focused on slow immersive travels.\n\nFollow us on IG",
     "mainEntityOfPage": "https://stuckinlowrange.com/about/"
 }
     </script>
 
     <meta name="generator" content="Ghost 5.91">
-    <link rel="alternate" type="application/rss+xml" title="Ghost" href="https://stuckinlowrange.com/rss/">
-    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.42/umd/portal.min.js" data-i18n="false" data-ghost="https://stuckinlowrange.com/" data-key="cc9d299dcd1cb143564fa4dc6b" data-api="https://stuckinlowrange.com/ghost/api/content/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+    <link rel="alternate" type="application/rss+xml" title="Stuck in Low Range" href="https://stuckinlowrange.com/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.42/umd/portal.min.js" data-i18n="false" data-ghost="https://stuckinlowrange.com/" data-key="1987028ca859a2a1285da65f70" data-api="https://stuckinlowrange.com/ghost/api/content/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
 .gh-post-upgrade-cta {
     display: flex;
     flex-direction: column;
@@ -177,187 +229,249 @@ By signing up, you&#x27;ll get access to the full archive of everything">
 .gh-post-upgrade-cta a.gh-btn:hover {
     opacity: 0.92;
 }</style>
-    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="cc9d299dcd1cb143564fa4dc6b" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://stuckinlowrange.com/" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="1987028ca859a2a1285da65f70" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://stuckinlowrange.com/" crossorigin="anonymous"></script>
     
     <link href="https://stuckinlowrange.com/webmentions/receive/" rel="webmention">
-    <script defer src="/public/cards.min.js?v=7c04549a56"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=7c04549a56">
-    <script defer src="/public/member-attribution.min.js?v=7c04549a56"></script><style>:root {--ghost-accent-color: #FF1A75;}</style>
+    <script defer src="/public/cards.min.js?v=be7fda8393"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=be7fda8393">
+    <script defer src="/public/member-attribution.min.js?v=be7fda8393"></script><style>:root {--ghost-accent-color: #10361e;}</style>
 
-</head>
-<body class="page-template page-about has-sans-title has-sans-body">
+    <style>
+      :root {
+        --primary-subtle-color: var(--ghost-accent-color) !important;
+      }
+    </style>
 
-<div class="gh-viewport">
+    <script>
+      // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+      const ghostHost = "https://stuckinlowrange.com"
+      // @license-end
+    </script>
+
+      <script>
+        const nativeSearchEnabled = true
+      </script>
+
+
+
+    <script>
+      if (typeof Storage !== 'undefined') {
+        const currentSavedTheme = localStorage.getItem('theme')
+
+        if (currentSavedTheme && currentSavedTheme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark')
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light')
+        }
+      }
+    </script>
+  </head>
+  <body class="page-template page-about tag-hash-import-2024-09-01-09-14">
     
-    <header id="gh-navigation" class="gh-navigation is-middle-logo gh-outer">
-    <div class="gh-navigation-inner gh-inner">
 
-        <div class="gh-navigation-brand">
-            <a class="gh-navigation-logo is-title" href="https://stuckinlowrange.com">
-                    Ghost
-            </a>
-            <button class="gh-search gh-icon-button" aria-label="Search this site" data-ghost-search>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>            <button class="gh-burger gh-icon-button" aria-label="Menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>            </button>
-        </div>
 
-        <nav class="gh-navigation-menu">
-            <ul class="nav">
-    <li class="nav-home"><a href="https://stuckinlowrange.com/">Home</a></li>
-    <li class="nav-about nav-current"><a href="https://stuckinlowrange.com/about/">About</a></li>
-</ul>
 
-        </nav>
+  
+<header class="m-header  js-header"  data-animate="fade-down">
+  <div class="m-mobile-topbar">
+    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="Open menu">
+      <span class="icon-menu" aria-hidden="true"></span>
+    </button>
+      <a href="https://stuckinlowrange.com" class="m-logo in-mobile-topbar">
+        <img src="https://stuckinlowrange.com/content/images/2023/09/silr.png" alt="Stuck in Low Range" class="">
+      </a>
+    <button class="m-icon-button in-mobile-topbar " data-ghost-search aria-label="Open search">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+  </div>
 
-        <div class="gh-navigation-actions">
-                <button class="gh-search gh-icon-button" aria-label="Search this site" data-ghost-search>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>                <div class="gh-navigation-members">
-                            <a href="#/portal/signin" data-portal="signin">Sign in</a>
-                                <a class="gh-button" href="#/portal/signup" data-portal="signup">Subscribe</a>
+  <div class="m-menu js-menu">
+    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="Close menu">
+      <span class="icon-close"></span>
+    </button>
+    <div class="m-menu__main">
+      <div class="l-wrapper">
+        <div class="m-nav js-main-nav">
+          <nav class="m-nav__left js-main-nav-left" role="navigation" aria-label="Main menu">
+            <ul>
+                <li class="only-desktop">
+                  <a href="https://stuckinlowrange.com" class="m-logo">
+                    <img src="https://stuckinlowrange.com/content/images/2023/09/silr.png" alt="Stuck in Low Range" class="">
+                  </a>
+                </li>
+                
+    <li class="nav-home">
+      <a href="https://stuckinlowrange.com/">home</a>
+    </li>
+    <li class="nav-about nav-current">
+      <a href="https://stuckinlowrange.com/about/">about</a>
+    </li>
+
+              <li class="submenu-option js-submenu-option">
+                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="Open submenu">
+                  <span class="icon-more" aria-hidden="true"></span>
+                </button>
+                <div class="m-submenu js-submenu">
+                  <div class="l-wrapper in-submenu">
+                    <section class="m-recent-articles">
+                      <h3 class="m-submenu-title in-recent-articles">Recent articles</h3>
+                          <div class="swiper js-recent-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                  <a href="/meru-national-park-our-best-park-visit-so-far/" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="/content/images/size/w300/2024/02/PXL_20230507_113458003_Original-1.JPG" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="Meru National Park - Our best park visit so far">
+                                      Meru National Park - Our best park visit so far
+                                    </h3>
+                                    <span class="m-recent-article__date">6 months ago</span>
+                                  </a>
+                                </div>
+                                <div class="swiper-slide">
+                                  <a href="/hot-springs-geysers-and-natural-pools-in-kenya/" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="/content/images/size/w300/2024/02/26FCD47D-ED53-4CA4-A078-53B13D07A642.JPG" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="Hot springs, geysers, and natural pools in Kenya">
+                                      Hot springs, geysers, and natural pools in Kenya
+                                    </h3>
+                                    <span class="m-recent-article__date">7 months ago</span>
+                                  </a>
+                                </div>
+                                <div class="swiper-slide">
+                                  <a href="/fave-local-brands-for-campers-in-kenya/" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="/content/images/size/w300/2024/02/PXL_20230514_064326725.jpg" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="Fave local brands for campers, a growing list.">
+                                      Fave local brands for campers, a growing list.
+                                    </h3>
+                                    <span class="m-recent-article__date">7 months ago</span>
+                                  </a>
+                                </div>
+                                <div class="swiper-slide">
+                                  <a href="/on-pace/" class="m-recent-article">
+                                    <div class="m-recent-article__picture ">
+                                        <img src="/content/images/size/w300/2024/02/PXL_20230604_032555316.jpg" loading="lazy" alt="">
+                                    </div>
+                                    <h3 class="m-recent-article__title js-recent-article-title" title="How do you pace your adventures?">
+                                      How do you pace your adventures?
+                                    </h3>
+                                    <span class="m-recent-article__date">7 months ago</span>
+                                  </a>
+                                </div>
+                            </div>
+                          </div>
+                    </section>
+                    <section class="m-tags">
+                      <h3 class="m-submenu-title">Tags</h3>
+                        <ul>
+                            <li>
+                              <a href="/tag/camping/">camping</a>
+                            </li>
+                            <li>
+                              <a href="/tag/camping-in-kenya/">camping in kenya</a>
+                            </li>
+                            <li>
+                              <a href="/tag/faves/">faves</a>
+                            </li>
+                            <li>
+                              <a href="/tag/hot-springs/">hot springs</a>
+                            </li>
+                            <li>
+                              <a href="/tag/meru-national-park/">meru national park</a>
+                            </li>
+                            <li>
+                              <a href="/tag/national-parks-in-kenya/">national parks in kenya</a>
+                            </li>
+                            <li>
+                              <a href="/tag/rhino-river-camp/">rhino river camp</a>
+                            </li>
+                        </ul>
+                    </section>
+                  </div>
                 </div>
+              </li>
+            </ul>
+          </nav>
+          <div class="m-nav__right">
+            <button class="m-icon-button in-menu-main " data-ghost-search aria-label="Open search">
+              <span class="icon-search" aria-hidden="true"></span>
+            </button>
+            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="Toggle light/dark mode" tabindex="0">
+              <label for="toggle-darkmode" class="sr-only">
+                Toggle light/dark mode
+              </label>
+              <input id="toggle-darkmode" type="checkbox" class="js-toggle-darkmode">
+              <div>
+                <span class="icon-moon moon" aria-hidden="true"></span>
+                <span class="icon-sunny sun" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
         </div>
-
+      </div>
     </div>
+  </div>
+
 </header>
 
+<main class="main-wrap">
     
-
-<main class="gh-main">
-    <article class="gh-article post no-image">
-
-            <header class="gh-article-header gh-canvas">
-                <h1 class="gh-article-title is-title">About this site</h1>
-                            </header>
-
-        <section class="gh-content gh-canvas is-body">
-            <p>This is an independent publication. If you subscribe today, you'll get full access to the website as well as email newsletters about new content when it's available. Your subscription makes this site possible. Thank you!</p><h3 id="access-all-areas">Access all areas</h3><p>By signing up, you'll get access to the full archive of everything that's been published before and everything that's still to come. Your very own private library.</p><h3 id="fresh-content-delivered">Fresh content, delivered</h3><p>Stay up to date with new content sent straight to your inbox! No more worrying about whether you missed something because of a pesky algorithm or news feed.</p><h3 id="meet-people-like-you">Meet people like you</h3><p>Join a community of other subscribers who share the same interests.</p><hr><h3 id="start-your-own-thing">Start your own thing</h3><p>Enjoying the experience? Get started for free and set up your very own subscription business using <a href="https://ghost.org/?ref=localhost">Ghost</a>, the same platform that powers this website.</p>
-        </section>
-
+  <section class="m-hero no-picture " data-animate="fade">
+    <div class="m-hero__content" data-animate="fade-down">
+      <h1 class="m-hero-title bigger">Stuck in Low Range</h1>
+    </div>
+    </section>
+    <article>
+      <div class="l-content">
+        <div class="l-wrapper in-post" data-animate="fade-up">
+          <div class="l-post-content">
+            <div class="pos-relative js-post-content">
+              <blockquote>G.K. Chesterton — The <em><strong>traveler sees</strong></em> what <em><strong>he sees</strong></em>. The <em><strong>tourist sees</strong></em> what <em><strong>he</strong></em> has come to <em><strong>see</strong></em>.<br> </blockquote><ul><li>Mostly outdoors.</li><li>Exploring.</li><li>Camping</li><li>Overlanding</li><li>Park visits</li><li>Hiking</li><li>Etc, </li></ul><p>Launched in September 2023, this is a travel journal through our lens. Focused on slow immersive travels.</p><p>Follow us on <a href="https://www.instagram.com/stuckinlowrange?ref=localhost">IG</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </article>
 </main>
 
 
+
+
     
-    <footer class="gh-footer gh-outer">
-    <div class="gh-footer-inner gh-inner">
+<footer class="m-footer">
+  <div class="m-footer__content">
+    <nav class="m-footer-social">
+        <a href="https://www.facebook.com/ghost" target="_blank" rel="noopener" aria-label="Facebook">
+          <span class="icon-facebook" aria-hidden="true"></span>
+        </a>
+        <a href="https://twitter.com/ghost" target="_blank" rel="noopener" aria-label="Twitter">
+          <span class="icon-twitter" aria-hidden="true"></span>
+        </a>
+      <a href="https://stuckinlowrange.com/rss" aria-label="RSS">
+        <span class="icon-rss" aria-hidden="true"></span>
+      </a>
+    </nav>
+    <p class="m-footer-copyright">
+      <span>Stuck in Low Range &copy; 2024</span>
+      <span>&nbsp; &bull; &nbsp;</span>
+      <span>Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></span>
+    </p>
+    <p class="m-footer-copyright jslicense">
+      <a href="/assets/html/javascript.html?v=be7fda8393" rel="jslicense">JavaScript license information</a>
+    </p>
+  </div>
+</footer>
 
-        <div class="gh-footer-bar">
-            <span class="gh-footer-logo is-title">
-                    Ghost
-            </span>
-            <nav class="gh-footer-menu">
-                <ul class="nav">
-    <li class="nav-sign-up"><a href="#/portal/">Sign up</a></li>
-</ul>
+    <script defer src="/assets/js/manifest.js?v=be7fda8393"></script>
+    <script defer src="/assets/js/vendor.js?v=be7fda8393"></script>
+    <script defer src="/assets/js/app.js?v=be7fda8393"></script>
 
-            </nav>
-            <div class="gh-footer-copyright">
-                Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a>
-            </div>
-        </div>
-
-                <section class="gh-footer-signup">
-                    <h2 class="gh-footer-signup-header is-title">
-                        Ghost
-                    </h2>
-                    <p class="gh-footer-signup-subhead is-body">
-                        Thoughts, stories and ideas
-                    </p>
-                    <form class="gh-form" data-members-form>
-    <input class="gh-form-input" id="footer-email" name="email" type="email" placeholder="jamie@example.com" required data-members-email>
-    <button class="gh-button" type="submit" aria-label="Subscribe">
-        <span><span>Subscribe</span> <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path></svg></span>
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
-    <g stroke-linecap="round" stroke-width="2" fill="currentColor" stroke="none" stroke-linejoin="round" class="nc-icon-wrapper">
-        <g class="nc-loop-dots-4-24-icon-o">
-            <circle cx="4" cy="12" r="3"></circle>
-            <circle cx="12" cy="12" r="3"></circle>
-            <circle cx="20" cy="12" r="3"></circle>
-        </g>
-        <style data-cap="butt">
-            .nc-loop-dots-4-24-icon-o{--animation-duration:0.8s}
-            .nc-loop-dots-4-24-icon-o *{opacity:.4;transform:scale(.75);animation:nc-loop-dots-4-anim var(--animation-duration) infinite}
-            .nc-loop-dots-4-24-icon-o :nth-child(1){transform-origin:4px 12px;animation-delay:-.3s;animation-delay:calc(var(--animation-duration)/-2.666)}
-            .nc-loop-dots-4-24-icon-o :nth-child(2){transform-origin:12px 12px;animation-delay:-.15s;animation-delay:calc(var(--animation-duration)/-5.333)}
-            .nc-loop-dots-4-24-icon-o :nth-child(3){transform-origin:20px 12px}
-            @keyframes nc-loop-dots-4-anim{0%,100%{opacity:.4;transform:scale(.75)}50%{opacity:1;transform:scale(1)}}
-        </style>
-    </g>
-</svg>        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-    <style>
-        .checkmark {
-            width: 40px;
-            height: 40px;
-            display: block;
-            stroke-width: 2.5;
-            stroke: currentColor;
-            stroke-miterlimit: 10;
-        }
-
-        .checkmark__check {
-            transform-origin: 50% 50%;
-            stroke-dasharray: 48;
-            stroke-dashoffset: 48;
-            animation: stroke .3s cubic-bezier(0.650, 0.000, 0.450, 1.000) forwards;
-        }
-
-        @keyframes stroke {
-            100% { stroke-dashoffset: 0; }
-        }
-    </style>
-</svg>    </button>
-    <p data-members-error></p>
-</form>                </section>
-
-    </div>
-</footer>    
-</div>
-
-    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="pswp__bg"></div>
-
-    <div class="pswp__scroll-wrap">
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="/assets/built/source.js?v=7c04549a56"></script>
+      <script defer src="/assets/js/page.js?v=be7fda8393"></script>
 
 
-
-</body>
+    
+  </body>
 </html>
